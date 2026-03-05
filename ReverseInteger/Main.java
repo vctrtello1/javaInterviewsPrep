@@ -17,10 +17,10 @@ public class Main {
             int pop = x % 10; // Get the last digit
             x /= 10; // Remove the last digit
             // Check for overflow before actually adding the digit
-            if (reversed > Integer.MAX_VALUE / 10 || (reversed == Integer.MAX_VALUE / 10 && pop > 7)) {
+            if (reversed > Integer.MAX_VALUE / 10 || (reversed == Integer.MAX_VALUE / 10 && pop > 7)) { // Check for overflow before actually adding the digit
                 return 0; // Overflow case for positive numbers
             }
-            if (reversed < Integer.MIN_VALUE / 10 || (reversed == Integer.MIN_VALUE / 10 && pop < -8)) {
+            if (reversed < Integer.MIN_VALUE / 10 || (reversed == Integer.MIN_VALUE / 10 && pop < -8)) { //  Check for overflow before actually adding the digit 
                 return 0; // Overflow case for negative numbers
             }
             reversed = reversed * 10 + pop; // Append the digit to the reversed number
