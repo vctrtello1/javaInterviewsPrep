@@ -1,0 +1,32 @@
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Logs
+*.log
+
+# Build
+bin/
+out/
+
+# IDEs
+.idea/
+*.iml
+
+# Others
+*.swp
+*.swo
+
+# Library
+/Library/
+
+# Workspace Storage
+/Users/*/Library/Application Support/Code/User/workspaceStorage/
