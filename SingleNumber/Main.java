@@ -14,7 +14,7 @@ public class Main {
     public int singleNumber(int[] nums) {
         int result = 0;
         for (int num : nums) {
-            result ^= num;
+            result ^= num; // XOR operation to find the single number
         }
         return result;
     }
