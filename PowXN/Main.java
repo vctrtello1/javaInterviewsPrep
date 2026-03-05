@@ -4,8 +4,8 @@ public class Main {
     // Implement pow(x, n), which calculates x raised to the power n (i.e., x^n).
     public static void main(String[] args) {
         Main main = new Main();
-        double x = 2.0;
-        int n = 10;
+        double x = 8.0;
+        int n =4;
         double result = main.myPow(x, n);
         System.out.println(result);
     }
