@@ -11,14 +11,17 @@ public class Main {
     }
 
     public boolean isPalindrome(int x) {
-        // Negative numbers are not palindromes
-        if (x < 0) {
-            return false;
+        // Negative numbers and numbers ending with 0 (except 0 itself) are not palindromes
+        if (x < 0 || (x % 10 == 0 && x != 0)) { // Check for negative numbers and numbers ending with 0 
+            return false; 
         }
-        // Convert the number to a string and check if it reads the same backward and forward
-        String str = String.valueOf(x); // Convert the integer to a string
-        String reversedStr = new StringBuilder(str).reverse().toString(); // Reverse the string to compare with the original
-        return str.equals(reversedStr);
+        int reversed = 0;
+        while (x > reversed) {
+            reversed = reversed * 10 + x % 10;
+            x /= 10;
+        }
+        // For even length, x == reversed; for odd length, x == reversed/10
+        return x == reversed || x == reversed / 10;
     }
 }
 
