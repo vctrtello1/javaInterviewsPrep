@@ -21,8 +21,9 @@ public class Main {
 
     class Solution {
         public List<String> fizzBuzz(int n) {
-            List<String> result = new ArrayList<>();
-            for (int i = 1; i <= n; i++) {
+            List<String> result = new ArrayList<>(); // List to store the resulting FizzBuzz strings
+            for (int i = 1; i <= n; i++) { // Loop through numbers from 1 to n and determine the appropriate FizzBuzz
+                                           // string for each number
                 if (i % 3 == 0 && i % 5 == 0) {
                     result.add("FizzBuzz");
                 } else if (i % 3 == 0) {

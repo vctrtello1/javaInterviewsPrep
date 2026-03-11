@@ -11,12 +11,13 @@ public class Main {
     }
 
     public boolean isPalindrome(int x) {
-        // Negative numbers and numbers ending with 0 (except 0 itself) are not palindromes
-        if (x < 0 || (x % 10 == 0 && x != 0)) { // Check for negative numbers and numbers ending with 0 
-            return false; 
+        // Negative numbers and numbers ending with 0 (except 0 itself) are not
+        // palindromes
+        if (x < 0 || (x % 10 == 0 && x != 0)) { // Check for negative numbers and numbers ending with 0
+            return false;
         }
         int reversed = 0;
-        while (x > reversed) {
+        while (x > reversed) { // We only need to reverse half of the number to check for palindrome
             reversed = reversed * 10 + x % 10;
             x /= 10;
         }
@@ -24,5 +25,3 @@ public class Main {
         return x == reversed || x == reversed / 10;
     }
 }
-
-
