@@ -7,27 +7,18 @@ public class Solution {
     public static List<List<Integer>> findMatrix(List<List<Integer>> a) {
         int n = a.size();
         int m = a.get(0).size();
+
         List<List<Integer>> b = new ArrayList<>();
-
-        // Inicializar matriz b
         for (int i = 0; i < n; i++) {
-            b.add(new ArrayList<>());
+            List<Integer> row = new ArrayList<>();
             for (int j = 0; j < m; j++) {
-                b.get(i).add(0);
+                int val = a.get(i).get(j);
+                if (j > 0) val += b.get(i).get(j - 1);
+                if (i > 0) val += b.get(i - 1).get(j);
+                if (i > 0 && j > 0) val -= b.get(i - 1).get(j - 1);
+                row.add(val);
             }
-        }
-
-        // Calcular suma acumulativa
-        for (int x = 0; x < n; x++) {
-            for (int y = 0; y < m; y++) {
-                int sum = 0;
-                for (int i = 0; i <= x; i++) {
-                    for (int j = 0; j <= y; j++) {
-                        sum += a.get(i).get(j);
-                    }
-                }
-                b.get(x).set(y, sum);
-            }
+            b.add(row);
         }
         return b;
     }
